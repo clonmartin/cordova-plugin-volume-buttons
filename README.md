@@ -41,7 +41,6 @@ Applications have to use `window.addEventListener`to attach this event listener 
 ### Supported Platforms
 
 - Android
-- iOS (in developing process)
 
 ### Example
 ``` js
