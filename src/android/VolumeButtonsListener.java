@@ -173,6 +173,20 @@ public class VolumeButtonsListener extends CordovaPlugin implements OnKeyListene
 					Log.e(VolumeButtonsListener_LOG, ex.getMessage());
 				}
 			}
+			//Enable keycode for answer calls on handsets
+			else if( keyCode == KeyEvent.KEYCODE_HEADSETHOOK  ){
+
+				// Create a new JSONObject with the information and send it
+				JSONObject info= new JSONObject();
+				try{
+					info.put("signal", new String("hang-on"));
+					sendSignal(info, true);
+					return true;
+				}
+				catch(JSONException ex){
+					Log.e(VolumeButtonsListener_LOG, ex.getMessage());
+				}
+			}
 		}
 
 		return false;
